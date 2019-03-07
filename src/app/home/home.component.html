@@ -1,0 +1,20 @@
+<h4 *ngIf="auth.isAuthenticated()">
+  You are logged in! <br />
+  <p>The twitter button is in a sanboxed iframe</p>
+  <iframe
+    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+    src="https://platform.twitter.com/widgets/tweet_button.html"
+    style="border: 0; width:130px; height:20px;"
+  ></iframe>
+  <br />
+  <br />
+  <br />
+  Api call:
+  <li *ngFor="let naam of namen">
+    Name : {{ naam.firstName }} {{ naam.lastName }}
+  </li>
+</h4>
+<h4 *ngIf="!auth.isAuthenticated()">
+  You are not logged in! Please <a (click)="auth.login()">Log In</a> to
+  continue. <br />
+</h4>
