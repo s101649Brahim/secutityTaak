@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
   Api: ApiService;
   namen: Naam[];
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit() {
     this.api.getNames().subscribe(data => (this.namen = data));
   }
-
-  onSubmit() {}
 }
