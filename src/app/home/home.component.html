@@ -10,6 +10,9 @@
   <br />
   <br />
   <button (click)="apiCall()">Api call:</button>
+  <li *ngFor="let naam of namen">
+    Name : {{ naam.firstName }} {{ naam.lastName }}
+  </li>
 </h4>
 <h4 *ngIf="!auth.isAuthenticated()">
   You are not logged in! Please <a (click)="auth.login()">Log In</a> to

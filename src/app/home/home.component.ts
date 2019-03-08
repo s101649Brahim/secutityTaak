@@ -12,15 +12,13 @@ export class HomeComponent implements OnInit {
   constructor(public auth: AuthService, public api: ApiService) {}
 
   Api: ApiService;
-  namen: Naam[];
+  namen = [];
 
-  apiCall(): string {
-    return '<li *ngFor="let naam of namen"> Name : {{ naam.firstName }} {{ naam.lastName }}</li>';
+  apiCall() {
+    this.api.getNames().subscribe(data => (this.namen = data));
   }
 
   ngOnInit() {}
 
-  onSubmit() {
-    this.api.getNames().subscribe(data => (this.namen = data));
-  }
+  onSubmit() {}
 }
