@@ -7,7 +7,6 @@ import { RouterModule } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
-import { Sandbox } from "./sandbox/sandbox";
 
 import { ROUTES } from "./app.routes";
 
@@ -17,7 +16,7 @@ import { OAuthModule } from "angular-oauth2-oidc-codeflow-pkce";
 import { ApiService } from "./service/api.service";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CallbackComponent, Sandbox],
+  declarations: [AppComponent, HomeComponent, CallbackComponent],
   imports: [
     BrowserModule,
     FormsModule,
