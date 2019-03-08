@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
   Api: ApiService;
   namen: Naam[];
 
+  apiCall(): string {
+    return '<li *ngFor="let naam of namen"> Name : {{ naam.firstName }} {{ naam.lastName }}</li>';
+  }
+
   ngOnInit() {}
 
   onSubmit() {
