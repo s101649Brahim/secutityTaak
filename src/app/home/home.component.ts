@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "./../auth/auth.service";
 import { ApiService } from "../service/api.service";
-import { Naam } from "../service/naam";
 
 @Component({
   selector: "app-home",
@@ -11,12 +10,14 @@ import { Naam } from "../service/naam";
 export class HomeComponent implements OnInit {
   constructor(public auth: AuthService, public api: ApiService) {}
 
+  //**student code change start**
   Api: ApiService;
   namen = [];
 
   apiCall() {
     this.api.getNames().subscribe(data => (this.namen = data));
   }
+  //**student code change end**
 
   ngOnInit() {}
 

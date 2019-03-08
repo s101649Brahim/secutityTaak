@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Naam } from "./naam";
 import { AuthService } from "app/auth/auth.service";
 
 @Injectable()
@@ -16,14 +15,16 @@ export class ApiService {
     );
   }
 
-  public getNames(): Observable<Naam[]> {
+  public getNames(): Observable<string[]> {
+    //**student code change start**
     let url = `${this.ApiServiceURI}/`;
 
-    return this.http.get<Naam[]>(url, {
+    return this.http.get<string[]>(url, {
       headers: new HttpHeaders().set(
         "Authorization",
         `Bearer ${this.auth.accessToken}`
       )
     });
+    //**student code change end**
   }
 }
