@@ -5,7 +5,7 @@ import { AuthService } from "app/auth/auth.service";
 
 @Injectable()
 export class ApiService {
-  private ApiServiceURI: string = "http://localhost:4000";
+  private ApiServiceURI: string = "https://securityserverap.herokuapp.com/";
   private contentHeaders: HttpHeaders;
 
   constructor(private http: HttpClient, public auth: AuthService) {
